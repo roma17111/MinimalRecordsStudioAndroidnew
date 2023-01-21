@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Minimalrecords</string>
+    <string name="app_nameStudio">Studio</string>
 </resources>
