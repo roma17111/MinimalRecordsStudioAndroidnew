@@ -12,6 +12,21 @@
         android:theme="@style/Theme.Minimalrecords"
         tools:targetApi="31">
         <activity
+            android:name=".Portfolio"
+            android:exported="false" />
+        <activity
+            android:name=".Apparatura"
+            android:exported="false" />
+        <activity
+            android:name=".Build"
+            android:exported="false" />
+        <activity
+            android:name=".Photo"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,6 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
