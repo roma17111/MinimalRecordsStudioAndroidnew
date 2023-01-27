@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/_644832420_14_krot_info_p_foni_dlya_saitov_14"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -35,7 +35,7 @@
     <EditText
         android:id="@+id/idEdtCourseDescription"
         android:layout_width="395dp"
-        android:layout_height="431dp"
+        android:layout_height="113dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"

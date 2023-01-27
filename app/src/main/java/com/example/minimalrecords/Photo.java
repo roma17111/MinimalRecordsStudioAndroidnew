@@ -12,8 +12,14 @@ public class Photo extends AppCompatActivity {
 
     private ViewFlipper myViewFlipper;
     private float initialXPoint;
-    int[] image = { R.drawable.page1, R.drawable.page2, R.drawable.page5,
-             R.drawable.page7, R.drawable.page8};
+    int[] image = { R.drawable.page1,
+            R.drawable.page2,
+            R.drawable.page5,
+            R.drawable.page4,
+             R.drawable.page7,
+            R.drawable.page6,
+            R.drawable.page10,
+            R.drawable.page8};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

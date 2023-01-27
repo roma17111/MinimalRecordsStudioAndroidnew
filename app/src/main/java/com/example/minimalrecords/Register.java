@@ -8,33 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.minimalrecords.models.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Register extends AppCompatActivity {
 
     // creating variables for our edit text
     private EditText courseNameEdt, courseDurationEdt, courseDescriptionEdt;
 
-    // creating variable for button
     private Button submitCourseBtn;
 
-    // creating a strings for storing
-    // our values from edittext fields.
     private String courseName, courseDuration, courseDescription;
-
-    // creating a variable
-    // for firebasefirestore.
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
@@ -58,11 +47,11 @@ public class Register extends AppCompatActivity {
                 courseDuration = courseDurationEdt.getText().toString();
 
                 if (TextUtils.isEmpty(courseName)) {
-                    courseNameEdt.setError("Please enter Course Name");
+                    courseNameEdt.setError("Пожалуйста введите имя");
                 } else if (TextUtils.isEmpty(courseDescription)) {
-                    courseDescriptionEdt.setError("Please enter Course Description");
+                    courseDescriptionEdt.setError("Пожалуйста введите описание");
                 } else if (TextUtils.isEmpty(courseDuration)) {
-                    courseDurationEdt.setError("Please enter Course Duration");
+                    courseDurationEdt.setError("Пожалуйста введите номер телефона");
                 } else {
                     addDataToFirestore(courseName, courseDuration, courseDescription);
                 }
@@ -73,23 +62,25 @@ public class Register extends AppCompatActivity {
     private void addDataToFirestore(String courseName, String courseDuration, String courseDescription) {
 
 
-        User user = new User();
-        user.setName(courseName);
-        user.setNumber(courseDuration);
-        user.setDescription(courseDescription);
-        myRef.child(FirebaseDatabase.getInstance().getApp().toString())
+        User user = new User(courseName,courseDuration,courseDescription);
+        myRef.child(user.getNumber())
                 .setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(Register.this, "Success", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Register.this, "Заявка отправлена. "+ '\n' +
+                                        "С вами свяжутся в ближайшее время",
+                                Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(Register.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Register.this, "Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Register.this,
+                                "Ошибка отправки",
+                                Toast.LENGTH_LONG).show();
                     }
                 });
-
     }
 }
