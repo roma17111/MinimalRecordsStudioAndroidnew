@@ -1,14 +1,19 @@
 package com.example.minimalrecords;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Contacts;
 import android.view.View;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,32 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goToPortfolio(View view) {
         Intent intent = new Intent(this, Portfolio.class);
+        startActivity(intent);
+    }
+
+    public void exit(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Выход");
+        builder.setMessage("Вы точно хотите выйти?");
+        builder.setCancelable(false);
+        builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        builder.create();
+        builder.show();
+    }
+
+    public void register(View view) {
+        Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
 }

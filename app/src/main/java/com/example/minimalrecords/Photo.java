@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class Photo extends AppCompatActivity {
@@ -20,6 +21,9 @@ public class Photo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
         myViewFlipper = (ViewFlipper) findViewById(R.id.myflipper);
+        Toast.makeText(this,
+                "Листайте фото свайпами вправо и влево",
+                Toast.LENGTH_LONG).show();
 
         for (int i = 0; i < image.length; i++) {
             ImageView imageView = new ImageView(Photo.this);
