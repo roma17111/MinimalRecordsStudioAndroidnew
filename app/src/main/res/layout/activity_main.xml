@@ -17,6 +17,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="8dp"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="-121dp">
 
@@ -144,6 +145,22 @@
                 android:backgroundTint="@color/design_default_color_error"
                 android:onClick="register"
                 android:text="Заказать услугу"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/black"
+                android:textColorLink="@color/black"
+                android:textSize="20sp"
+                app:icon="@color/design_default_color_error"
+                app:iconTint="#FF5722" />
+
+            <Button
+                android:id="@+id/buttonEx3"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:backgroundTint="@color/design_default_color_error"
+                android:onClick="goToReviews"
+                android:text="Отзывы"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/black"
                 android:textColorHint="@color/black"

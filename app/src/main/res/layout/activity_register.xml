@@ -29,7 +29,7 @@
         android:layout_marginEnd="10dp"
         android:hint="Введите номер телефона"
         android:importantForAutofill="no"
-        android:inputType="number" />
+        android:inputType="phone" />
 
     <!--Edittext for getting course Description-->
     <EditText
