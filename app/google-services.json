@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "941943928507",
+    "firebase_url": "https://minimalrecords-e9d85-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "minimalrecords-e9d85",
+    "storage_bucket": "minimalrecords-e9d85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941943928507:android:4923212ddf7bc919579b9e",
+        "android_client_info": {
+          "package_name": "com.example.minimalrecords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941943928507-ts9m4g6mbm28l07g24qaho2a8mgpdr4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.minimalrecords",
+            "certificate_hash": "88aa6318289c91a356e2bcb791ebb36b6a60c258"
+          }
+        },
+        {
+          "client_id": "941943928507-hcoraum506obp8l72t6pt4i8qvuteghc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1NWroYxxPC5neRtDh1kD3f0aXEtjpZdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941943928507-hcoraum506obp8l72t6pt4i8qvuteghc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
