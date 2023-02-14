@@ -93,65 +93,7 @@ public class Revievs extends AppCompatActivity {
             coursesLV.setAdapter(adapter);
     }
 
-    public void startReviews(View view) {
-        openWiews();
-    }
 
-    private void openWiews() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Напишите отзыв");
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View fragmentReview = inflater.inflate(R.layout.fragment_reviovs, null);
-        builder.setView(fragmentReview);
-
-        builder.setNegativeButton("Отменить", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-
-        builder.setPositiveButton("Отправить", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                EditText name10 = (EditText) fragmentReview.findViewById(R.id.name1);
-                EditText review10 = (EditText) fragmentReview.findViewById(R.id.description1);
-
-
-                String nameS = name10.getText().toString();
-                String reviewS = review10.getText().toString();
-                if (TextUtils.isEmpty(nameS)){
-                    dialogInterface.dismiss();
-                    Toast.makeText(Revievs.this, "Все поля должны быть заполнены!!!)",
-                            Toast.LENGTH_LONG).show();
-                }else if (TextUtils.isEmpty(reviewS)) {
-                    dialogInterface.dismiss();
-                    Toast.makeText(Revievs.this, "Все поля должны быть заполнены!!!)",
-                            Toast.LENGTH_LONG).show();
-                }
-                Reviews review = new Reviews(nameS, reviewS);
-                myRef.child(review.getReview())
-                        .setValue(review).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void v) {
-                                Toast.makeText(Revievs.this, "Cпасибо за ваш отзыв:)",
-                                        Toast.LENGTH_LONG).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Revievs.this,
-                                        "Ошибка отправки",
-                                        Toast.LENGTH_LONG).show();
-                            }
-                        });
-            }
-        });
-        builder.create();
-        builder.show();
-    }
 
 }
 

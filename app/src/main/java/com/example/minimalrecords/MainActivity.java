@@ -70,4 +70,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Revievs.class);
         startActivity(intent);
     }
+
+    public void sendReview(View view) {
+        Intent intent = new Intent(this,SendReview.class);
+        startActivity(intent);
+    }
 }
