@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Random;
 
 public class SendReview extends AppCompatActivity {
+
     private EditText courseNameEdt, courseDurationEdt, courseDescriptionEdt;
     private Button submitCourseBtn;
     private String courseName,  courseDescription;
